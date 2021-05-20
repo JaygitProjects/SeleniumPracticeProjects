@@ -1,4 +1,4 @@
-package webElement.Text_EditBoxFunctions;
+package WebElementBasics;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

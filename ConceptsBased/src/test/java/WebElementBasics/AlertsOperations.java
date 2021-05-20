@@ -1,4 +1,4 @@
-package webElement.Alert;
+package WebElementBasics;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;

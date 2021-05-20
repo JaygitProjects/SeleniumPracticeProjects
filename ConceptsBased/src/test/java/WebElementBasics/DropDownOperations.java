@@ -1,4 +1,4 @@
-package webElement.DropDown;
+package WebElementBasics;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,14 +9,12 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.util.List;
-
 public class DropDownOperations {
     WebDriver webDiver;
 
     @BeforeTest
     public void setup() throws InterruptedException {
-        System.setProperty("webdriver.gecko.driver", "/Users/Raaj/Documents/Jayanthi/Software/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "/Users/chenni/Documents/Jayanthi/Software/geckodriver");
         webDiver = new FirefoxDriver();
 
         String url = "http://www.leafground.com";
