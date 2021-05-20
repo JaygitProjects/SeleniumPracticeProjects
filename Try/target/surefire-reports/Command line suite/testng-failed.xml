@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Command line suite]">
+  <test thread-count="5" verbose="0" name="Command line test(failed)">
+    <classes>
+      <class name="Try1.TestNgPractice">
+        <methods>
+          <include name="testTestNg5"/>
+          <include name="testTestNg2"/>
+          <include name="testTestNg6"/>
+          <include name="testTestNg3"/>
+          <include name="testTestNg4"/>
+          <include name="testTestNg1"/>
+        </methods>
+      </class> <!-- Try1.TestNgPractice -->
+      <class name="Try1.TestNGAnnotations">
+        <methods>
+          <include name="testBeforeSuite"/>
+          <include name="test2"/>
+          <include name="testAfterClass"/>
+          <include name="testAfterTest"/>
+          <include name="testabeforeMethod"/>
+          <include name="testAfterSuite"/>
+          <include name="testBeforeClass"/>
+          <include name="testBeforeTest"/>
+          <include name="test1"/>
+          <include name="testAfterMethod"/>
+        </methods>
+      </class> <!-- Try1.TestNGAnnotations -->
+      <class name="Try1.TestNgProject">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="loginPage"/>
+        </methods>
+      </class> <!-- Try1.TestNgProject -->
+      <class name="Try1.GmailTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="gmailTest"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- Try1.GmailTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->

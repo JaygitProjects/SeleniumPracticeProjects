@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite - Verify all concept">
+    <test name="Test - verify all Concepts" preserve-order="true" verbose="2">
+        <parameter name="uName" value="jayanthirsundar@gmail.com"/>
+        <parameter name ="pWord" value="2FA/i1aG"/>
+        <classes>
+
+            <class name="Try1.TestNgProject"></class>
+        </classes>
+    </test>
+</suite>
+
+
+
+

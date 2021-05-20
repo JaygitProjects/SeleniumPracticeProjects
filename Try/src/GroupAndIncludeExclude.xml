@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name=" Test Suite - Try1.AssertionDemo ">
+    <test verbose="2" preserve-order="true" name="/Users/Raaj/Documents/Jayanthi/Java/JayPractice/Try">
+        
+        <groups>
+            <run>
+                <include name="TestPass"></include>
+                <include name="testPassAndFail"></include>
+                <exclude name="TestFail"></exclude>
+            </run>
+        </groups>
+        <classes>
+            <class name="Try1.AssertionDemo">
+
+            </class>
+        </classes>
+    </test>
+</suite>
