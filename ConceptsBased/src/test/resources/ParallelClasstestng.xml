@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests">
+    <test verbose="2" preserve-order="true"
+          name="Test-Parallel class test">
+        <classes>
+            <class name="TestNGFeatures.SafariParallel"></class>
+            <!--<class name="TestNGFeatures.FirefoxParallel"></class>
+            <class name="TestNGFeatures.ChromeParallel"></class>-->
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true"
+          name="Test-Parallel class test 2" parallel="tests">
+        <classes>
+            <!--        <class name="TestNGFeatures.SafariParallel"></class>-->
+            <class name="TestNGFeatures.FirefoxParallel"></class>
+            <!--        <class name="TestNGFeatures.ChromeParallel"></class>-->
+        </classes>
+
+    </test>
+
+    <test verbose="2" preserve-order="true"
+          name="Test-Parallel class test 3" parallel="tests">
+        <classes>
+            <!--<class name="TestNGFeatures.SafariParallel"></class>
+            <class name="TestNGFeatures.FirefoxParallel"></class>-->
+            <class name="TestNGFeatures.ChromeParallel"></class>
+        </classes>
+
+    </test>
+
+
+</suite>
