@@ -1,5 +1,6 @@
 
-package Try2;
+
+package SeleniumWebsite;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -48,7 +49,7 @@ public class Inputform {
             driver = new SafariDriver();
         }
         if (browserType.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver_2");
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver_3");
             driver = new ChromeDriver();
         } else if (browserType.equalsIgnoreCase("firefox")) {
             System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/src/test/resources/geckodriver");
@@ -61,30 +62,38 @@ public class Inputform {
 
     }
 
-    public static void commonInputElement() {
-        if (driver.findElement(By.xpath("//a[@href='#'][@class='at-cv-button at-cv-lightbox-yesno at-cm-no-button']")).isEnabled())
+    /*public static void commonInputElement() {
+        { if (driver.findElement(By.id("image-darkener")).isEnabled())
             driver.findElement(By.xpath("//a[@href='#'][@class='at-cv-button at-cv-lightbox-yesno at-cm-no-button']")).click();
+            else
+            System.out.println("Popup not found");}
+            //Input Forms
+            WebElement inputForms = driver.findElement(By.linkText("Input Forms"));
+            inputForms.click();
+    }*/
+
+    public void cookieHandle(){
+//cookie
+        if(driver.findElement(By.xpath("//a[text()='No, thanks!']")).isEnabled())
+            driver.findElement(By.xpath("//a[text()='No, thanks!']")).click();
+    }
+    public void commonInputElement(){
         //Input Forms
-        WebElement inputForms = driver.findElement(By.xpath("//a[@href='#' and @class='dropdown-toggle']"));
+        WebElement inputForms = driver.findElement(By.linkText("Input Forms"));
         inputForms.click();
     }
 
-    @Test(priority = 1, enabled = false)
+    @Test(priority = 1)
     public void testSimpleForm() throws InterruptedException {
 //popup cookie
 
         System.out.println("Title : " + driver.getTitle());
         System.out.println("*********************** Simple Form *********************************************");
 
-/*//*
-/Input Forms
-        WebElement inputForms = driver.findElement(By.xpath("//a[@href='#' and @class='dropdown-toggle']"));
-        inputForms.click();*/
-
         commonInputElement();
 //1.Simple Form Demo
-        Thread.sleep(1000);
-        WebElement simpleForm = driver.findElement(By.xpath("//a[contains(@href,'./basic-first-form-demo.html')]"));
+
+        WebElement simpleForm = driver.findElement(By.linkText("Simple Form Demo"));
         simpleForm.click();
 //Enter user message
         WebElement userMsg = driver.findElement(By.xpath("//input[@id='user-message']"));
@@ -110,25 +119,16 @@ public class Inputform {
         Assert.assertEquals((driver.findElement(By.xpath("//*[@id='displayvalue']"))).getText(), "60");
     }
 
-    @Test(priority = 2, enabled = false)
-    public void testCheckBoxDemo() {
+    @Test(priority = 2)
+    public void testCheckBoxDemo() throws InterruptedException {
         System.out.println("***************************** Check box *********************************************");
-//Check box demo
+        cookieHandle();
+       commonInputElement();
 
-WebElement inputForms = driver.findElement(By.xpath("//a[@href='#' and @class='dropdown-toggle']"));
-        inputForms.click();
+ //Check box demo
+       WebElement checkBox =  driver.findElement(By.linkText("Checkbox Demo"));
+       checkBox.click();
 
-        commonInputElement();
-        //check box demo
-    //    WebDriverWait wait = new WebDriverWait(driver, 10);
-
-/* wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='./basic-checkbox-demo.html']")));*//*
-
-        WebElement checkBox = driver.findElement(By.xpath("//a[@href='./basic-checkbox-demo.html']"));
-        checkBox.click();
-
-        */
-/* wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='isAgeSelected']")));*/
 
 //to scroll the page
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -155,14 +155,12 @@ System.out.println(multipleCheckBox.getText());
     }
 
     //Radio Button Demo
-    @Test(priority = 3, enabled = false)
+    @Test(priority = 3 )
     public void testRadioButton() throws InterruptedException {
         System.out.println("********************** Radio button *******************************");
 
 
 //Input Forms
-        WebElement inputForms = driver.findElement(By.xpath("//a[@href='#' and @class='dropdown-toggle']"));
-        inputForms.click();
 
         commonInputElement();
         //RadioButton
@@ -207,11 +205,11 @@ System.out.println(multipleCheckBox.getText());
         Assert.assertEquals(actualAge, "5 - 15");
     }
 
-    @Test(priority = 4, enabled = false)
+    @Test(priority = 4)
     public void testDropdown() throws InterruptedException {
         System.out.println("************************ Dropdown List **************************************");
         commonInputElement();
-//Radio button mdemo menu
+//Radio button demo menu
         driver.findElement(By.xpath("//a[text()='Select Dropdown List']")).click();
         System.out.println(driver.getTitle());
         WebElement days = driver.findElement(By.xpath("//select[@class='form-control']"));
@@ -226,7 +224,7 @@ System.out.println(multipleCheckBox.getText());
 
     }
 
-    @Test(priority = 5, enabled = false)
+    @Test(priority = 5)
     public void testInputForm() throws InterruptedException {
         System.out.println("****************** Input Form *********************");
         commonInputElement();
@@ -264,7 +262,7 @@ System.out.println(multipleCheckBox.getText());
 
     }
 
-    @Test(priority = 6, enabled = false)
+    @Test(priority = 6)
     public void testAjaxForm() {
         commonInputElement();
         driver.findElement(By.xpath("//a[@href='./ajax-form-submit-demo.html']")).click();
